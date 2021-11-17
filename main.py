@@ -48,13 +48,13 @@ def achat():
     print("quelle est la quantite achetee?")
     quantiteMedoc = inputInt()
 
-    while(quantiteMedoc>=medoc.stock):
-        print("le stock pour ce medicament est de :"+ medoc.stock +" veuilleur choisire un nombre valable")
+    while(quantiteMedoc>medoc.stock):
+        print("le stock pour ce medicament est de :" + str(medoc.stock) + " veuilleur choisire un nombre valable")
         quantiteMedoc = inputInt()
 
-    medoc.debit(lireTable)
-
-    client.crediter(quantitePaiyment-(quantiteMedoc*medoc.prix))
+    medoc.debit(quantiteMedoc)
+    prix = quantitePaiyment-(quantiteMedoc*medoc.prix)
+    client.crediter(prix)
 
 
 def quitter():

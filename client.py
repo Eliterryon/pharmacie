@@ -11,8 +11,4 @@ class Client:
         self.credit -= montant
 
     def __str__(self):
-        return ("Client(name={0}, credit={1})".format(self.nom, self.credit))
-
-if __name__ == "__main__":
-    m1 = Client("aspirine", 1.3)
-    print(m1)
+        return ("Client(name={}, credit={})".format(self.nom, self.credit))
